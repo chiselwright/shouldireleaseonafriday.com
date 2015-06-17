@@ -1,0 +1,130 @@
+default_site   chizography
+
+<site>
+    # a default site
+    <default>
+        source_dir          /path/to/tt_templates
+        includes_dir        /path/to/tt_includes
+        output_dir          /var/www/default_site/html
+
+        template_files      \.html\z
+
+        ignore_dirs         CVS
+        ignore_dirs         .svn
+
+        ignore_files        \.swp\z
+
+        lint_check          1
+
+        <tags>
+            author          Joe Bloggs
+            email           joe@localhost
+            copyright       &copy; 2006-2008 Joe Bloggs. All rights reserved.
+        </tags>
+
+        <ftp>
+            hostname        remote.ftp.site
+            username        joe.bloggs
+            password        sekrit
+            passive         1
+            path            /
+        </ftp>
+    </default>
+
+
+    # a second site definition - to demonstrate how to define multiple sites
+    <chizography>
+        source_dir          /home/chisel/development/websites/chizography.net/templated
+        includes_dir        /home/chisel/development/websites/chizography.net/includes
+        #output_dir          /home/chisel/development/websites/chizography.net/output
+        output_dir          /tmp/chizography.net
+
+        plugin_base         MyPrefix::Template::Plugin
+
+        template_files      \.html\z
+
+        ignore_dirs         CVS
+        ignore_dirs         .svn
+        ignore_dirs         .git
+        ignore_dirs         www.chizography.net
+
+        ignore_files        \.sw.\z
+
+        lint_check          1
+
+        <tags>
+            site_name       chizography
+            author          Chisel Wright
+            email           chisel@chizography.net
+            copyright       &copy; 2013 Chisel Wright. All rights reserved.
+        </tags>
+
+        <rsync>
+            hostname        chisel.pm
+            path            /opt/www/chizography.net
+         </rsync>
+    </chizography>
+
+    <chisel.pm>
+        source_dir          /home/chisel/development/websites/chisel.pm/templated
+        includes_dir        /home/chisel/development/websites/chisel.pm/includes
+        output_dir          /home/chisel/development/websites/chisel.pm/output
+
+        plugin_base         MyPrefix::Template::Plugin
+
+        template_files      \.html\z
+
+        ignore_dirs         CVS
+        ignore_dirs         .svn
+        ignore_dirs         .git
+        ignore_dirs         www.chizography.net
+
+        ignore_files        \.swp\z
+        ignore_files        \A\.gitignore\z
+
+        lint_check          1
+
+        <tags>
+            site_name       Chizography
+            author          Chisel Wright
+            email           chisel@chisel.pm
+            copyright       &copy; 2013 Chisel Wright. All rights reserved.
+        </tags>
+
+        <rsync>
+            hostname        remote.site
+            path            /home/joe.bloggs
+         </rsync>
+    </chisel.pm>
+
+    <kristaleksa>
+        source_dir          /home/chisel/development/websites/kristaleksa.net/templated
+        includes_dir        /home/chisel/development/websites/kristaleksa.net/includes
+        output_dir          /tmp/kristaleksa.net
+
+        plugin_base         MyPrefix::Template::Plugin
+
+        template_files      \.html\z
+
+        ignore_dirs         CVS
+        ignore_dirs         .svn
+        ignore_dirs         .git
+        ignore_dirs         www.kristaleksa.net
+
+        ignore_files        \.sw.\z
+
+        lint_check          1
+
+        <tags>
+            site_name       ByKrista
+            author          Chisel Wright
+            email           chisel@chizography.net
+            copyright       Site Design by @chizcw
+        </tags>
+
+        <rsync>
+            hostname        droplet.chizography.net
+            path            /opt/www/kristaleksa.net
+         </rsync>
+    </kristaleksa>
+</site>

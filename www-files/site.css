@@ -1,0 +1,28 @@
+h1 {
+    font-family: "Helvetica", "Trebuchet", Arial, sans-serif;
+    font-size: 250px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+body {
+    background: #fafafa;
+}
+
+p {
+    font-family: "Helvetica", "Trebuchet", Arial, sans-serif;
+    text-align: center;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.embeddedTweet {
+    display: none;
+    z-index: 1;
+}
+
+.share-this {
+    text-align:center;
+    display: none;
+    z-index: 1;
+}
