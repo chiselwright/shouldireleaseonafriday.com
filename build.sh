@@ -11,3 +11,9 @@ docker stop friday_release \
         --name=friday_release \
         -e VIRTUAL_HOST=shouldireleaseonafriday.com \
         chizcw/releasefriday
+
+echo "+++ listing most recent container"
+docker ps -n=1
+
+echo "--- listing all containers"
+docker ps
