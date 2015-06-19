@@ -3,6 +3,9 @@
 # https://buildkite.com/docs/guides/writing-build-scripts
 set -eo pipefail
 
+echo "+++ rebuilding container"
+docker build -t chizcw/releasefriday .
+
 echo "+++ relaunching container"
 docker stop friday_release ||true;
 docker rm friday_release   ||true;
